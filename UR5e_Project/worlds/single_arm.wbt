@@ -1,0 +1,140 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/universal_robots/protos/UR5e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/robotiq/protos/Robotiq2f140Gripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BlanketFabric.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.2291679519343075 -0.09118913398752479 -0.9691060786357912 3.802050648898474
+  position 2.1477439012456214 -1.7014412971042765 1.9303881529374953
+}
+TexturedBackground {
+  texture "empty_office"
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 2
+}
+WoodenBox {
+  size 0.3 0.3 0.6
+}
+UR5e {
+  hidden position_0_0 4.486680643941595e-05
+  hidden rotation_1 0 0 1 4.4866809906216705e-05
+  hidden position_1_0 0.00013385542082036683
+  hidden linearVelocity_1 -2.1314393311062212e-05 1.4019265295497726e-05 -4.078063530341831e-05
+  hidden angularVelocity_1 -2.5511958679799665e-06 1.9294416343569926e-05 -0.0006604458256307538
+  hidden rotation_2 0 1 0 1.5709298554208202
+  hidden position_2_0 1.8832733190696936e-05
+  hidden linearVelocity_2 7.71913194961585e-06 -0.00014662853110222269 0.00014210423943814015
+  hidden angularVelocity_2 -0.00016456849279492406 -0.0010154682594152805 -0.0006673357728100404
+  hidden rotation_3 0 1 0 1.8832733403554916e-05
+  hidden position_3_0 -2.1484891317274496e-08
+  hidden linearVelocity_3 -0.00021264105715040806 -0.0003733982554258988 0.000495199496512686
+  hidden angularVelocity_3 -0.00016646294276068956 -0.0010146186530806027 -0.0006642445481872352
+  hidden rotation_4 0 1 0 1.5707959785151084
+  hidden position_4_0 1.3523438646271094e-08
+  hidden linearVelocity_4 -0.00021603963885471247 -0.0005542415967631837 0.0007311617479685483
+  hidden angularVelocity_4 -0.00016830443111023695 -0.00101444827110451 -0.0006636195843052518
+  hidden position_5_0 -2.2907722221106178e-08
+  hidden linearVelocity_5 -0.00011263194009547862 -0.0005839857170415614 0.0007452338286457482
+  hidden angularVelocity_5 -0.0001685073815808987 -0.001014181698820346 -0.0006634235835849495
+  hidden rotation_6 0 -1 0 2.9802322387695313e-08
+  hidden linearVelocity_6 -4.025369904155129e-05 -0.0005976265793292651 0.0007408749098292613
+  hidden angularVelocity_6 -0.00016890953964389895 -0.0010138376978369582 -0.0006632395278967431
+  hidden position_7_0 0.4344005975038207
+  hidden position_7_1 -0.43781488386571477
+  hidden position_7_2 0.3077810502733248
+  hidden position_7_3 -0.3077022772118507
+  hidden rotation_8 1 0 0 1.8613954024961794
+  hidden position_9_0 0.45849499512808906
+  hidden rotation_10 -1 0 0 0.2665050048719109
+  hidden rotation_12 1 0 0 1.8579811161342854
+  hidden position_12_0 0.4619092814890575
+  hidden rotation_13 -2.6549541706519904e-08 0.8382181397701174 0.5453350806250441 3.1415929959061946
+  hidden position_14_0 0.3120171692562026
+  hidden translation_15 0 0.08176113958065004 -0.02821903432555783
+  hidden rotation_15 -1 0 0 0.41298283074379566
+  hidden rotation_17 -2.6542800356795497e-08 -0.8382396179768634 -0.5453020656975377 3.141592995908286
+  hidden position_17_0 0.31193839619394603
+  translation 0 0 0.6
+  controller "<extern>"
+  toolSlot [
+    Robotiq2f140Gripper {
+      rotation 1 0 0 -1.5708
+    }
+  ]
+}
+Table {
+  translation 0.75 0 0
+  size 0.6 1 0.5
+  feetSize 0.05 0.05
+}
+Solid {
+  children [
+    Table {
+      translation -0.49 0 0
+      size 0.5 0.8 0.7
+      feetSize 0.05 0.05
+    }
+  ]
+}
+Solid {
+  translation -0.6 0.2 0.7998037999999997
+  rotation 0.19730322006924544 0.9803425112238034 6.141148761447963e-06 2.460300516469863e-15
+  children [
+    Shape {
+      appearance BlanketFabric {
+      }
+      geometry Cylinder {
+        height 0.2
+        radius 0.05
+      }
+    }
+  ]
+  name "box"
+  boundingObject Cylinder {
+    height 0.2
+    radius 0.05
+  }
+  physics Physics {
+    mass 1
+    centerOfMass [
+      0 0 0
+    ]
+    inertiaMatrix [
+      1 1 1
+      0 0 0
+    ]
+    damping Damping {
+    }
+  }
+  linearVelocity 5.093167174560653e-17 -5.483273396340469e-17 1.4289348672516183e-15
+  angularVelocity 5.48800873747428e-16 5.106813085979416e-16 -2.995200523337806e-20
+}
+Solid {
+  translation 0.65 -0.3 0.501
+  children [
+    Shape {
+      appearance Appearance {
+        texture ImageTexture {
+          url [
+            "img/H.png"
+          ]
+        }
+      }
+      geometry Plane {
+        size 0.1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+}

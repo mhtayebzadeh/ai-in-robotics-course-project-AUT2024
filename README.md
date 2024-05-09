@@ -29,7 +29,7 @@ To get started with the exercises, follow these steps:
 ### Exercise 1: Inverse Kinematics
 Students will be introduced to solving inverse kinematics for the UR5e manipulator. They will learn to calculate joint angles required to achieve a desired end-effector position. (numerically or analytically)
 
-Pick up the cylinder object from table at position P1 = [-0.6 , 0.2 , 0.8] and place it on another table at position P2 = [0.65 , -0.3 , 0.6]. UR5e robot origin placed at P_base = [0 , 0, 0.6].
+Pick up the cylinderical object from table at position P1 = [-0.6 , 0.2 , 0.8] and place it on another table at position P2 = [0.65 , -0.3 , 0.6]. UR5e robot origin placed at P_base = [0 , 0, 0.6].
 
 <!-- 
 ### Exercise 2: Object Detection and Grasping

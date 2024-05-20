@@ -5,15 +5,40 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/universal_robots/protos/UR5e.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/robotiq/protos/Robotiq2f140Gripper.proto"
+EXTERNPROTO "../protos/Robotiq2f140Gripper.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BlanketFabric.proto"
 
 WorldInfo {
+  basicTimeStep 8
+  dragForceScale 50
+  contactProperties [
+    ContactProperties {
+      material1 "slope"
+      coulombFriction [
+        0.5
+      ]
+    }
+    ContactProperties {
+      coulombFriction [
+        2
+      ]
+      bounce 0.1
+    }
+    ContactProperties {
+      material1 "ROBOTIQ gripper pad"
+      coulombFriction [
+        100
+      ]
+      bounceVelocity 0.001
+      softERP 0.1
+      softCFM 0.005
+    }
+  ]
 }
 Viewpoint {
-  orientation 0.2291679519343075 -0.09118913398752479 -0.9691060786357912 3.802050648898474
-  position 2.1477439012456214 -1.7014412971042765 1.9303881529374953
+  orientation -0.1571281286836075 0.05787390225698307 0.9858810083442812 2.170517777092339
+  position 1.8473971079867944 -2.337809495097593 1.9137056639130043
 }
 TexturedBackground {
   texture "empty_office"
@@ -27,49 +52,42 @@ WoodenBox {
   size 0.3 0.3 0.6
 }
 UR5e {
-  hidden position_0_0 4.486680643941595e-05
-  hidden rotation_1 0 0 1 4.4866809906216705e-05
-  hidden position_1_0 0.00013385542082036683
-  hidden linearVelocity_1 -2.1314393311062212e-05 1.4019265295497726e-05 -4.078063530341831e-05
-  hidden angularVelocity_1 -2.5511958679799665e-06 1.9294416343569926e-05 -0.0006604458256307538
-  hidden rotation_2 0 1 0 1.5709298554208202
-  hidden position_2_0 1.8832733190696936e-05
-  hidden linearVelocity_2 7.71913194961585e-06 -0.00014662853110222269 0.00014210423943814015
-  hidden angularVelocity_2 -0.00016456849279492406 -0.0010154682594152805 -0.0006673357728100404
-  hidden rotation_3 0 1 0 1.8832733403554916e-05
-  hidden position_3_0 -2.1484891317274496e-08
-  hidden linearVelocity_3 -0.00021264105715040806 -0.0003733982554258988 0.000495199496512686
-  hidden angularVelocity_3 -0.00016646294276068956 -0.0010146186530806027 -0.0006642445481872352
-  hidden rotation_4 0 1 0 1.5707959785151084
-  hidden position_4_0 1.3523438646271094e-08
-  hidden linearVelocity_4 -0.00021603963885471247 -0.0005542415967631837 0.0007311617479685483
-  hidden angularVelocity_4 -0.00016830443111023695 -0.00101444827110451 -0.0006636195843052518
-  hidden position_5_0 -2.2907722221106178e-08
-  hidden linearVelocity_5 -0.00011263194009547862 -0.0005839857170415614 0.0007452338286457482
-  hidden angularVelocity_5 -0.0001685073815808987 -0.001014181698820346 -0.0006634235835849495
-  hidden rotation_6 0 -1 0 2.9802322387695313e-08
-  hidden linearVelocity_6 -4.025369904155129e-05 -0.0005976265793292651 0.0007408749098292613
-  hidden angularVelocity_6 -0.00016890953964389895 -0.0010138376978369582 -0.0006632395278967431
-  hidden position_7_0 0.4344005975038207
-  hidden position_7_1 -0.43781488386571477
-  hidden position_7_2 0.3077810502733248
-  hidden position_7_3 -0.3077022772118507
-  hidden rotation_8 1 0 0 1.8613954024961794
-  hidden position_9_0 0.45849499512808906
-  hidden rotation_10 -1 0 0 0.2665050048719109
-  hidden rotation_12 1 0 0 1.8579811161342854
-  hidden position_12_0 0.4619092814890575
-  hidden rotation_13 -2.6549541706519904e-08 0.8382181397701174 0.5453350806250441 3.1415929959061946
-  hidden position_14_0 0.3120171692562026
-  hidden translation_15 0 0.08176113958065004 -0.02821903432555783
-  hidden rotation_15 -1 0 0 0.41298283074379566
-  hidden rotation_17 -2.6542800356795497e-08 -0.8382396179768634 -0.5453020656975377 3.141592995908286
-  hidden position_17_0 0.31193839619394603
+  hidden position_0_0 9.743043398920573e-05
+  hidden rotation_1 0 0 0.9999999999999999 9.743043314673229e-05
+  hidden position_1_0 6.346004355785327e-05
+  hidden rotation_2 0 1 0 1.5708594600435568
+  hidden position_2_0 2.384413333796691e-05
+  hidden rotation_3 0 0.9999999999999999 0 2.384413022909449e-05
+  hidden position_3_0 4.976141837666522e-06
+  hidden rotation_4 0 1 0 1.5708009761418371
+  hidden position_4_0 -1.1399054445953553e-06
+  hidden rotation_5 0 0 -1 1.13991448276672e-06
+  hidden position_5_0 2.0864734079297128e-10
+  hidden translation_6 -1.821263744013404e-05 8.48637771166949e-10 0.09999999949365779
+  hidden rotation_6 -2.525775328252162e-05 -0.42100661974780507 0.9070575645958601 2.5217766524919963e-06
+  hidden position_8_0 0.13992524463849085
+  hidden position_8_1 -0.13935357351785882
+  hidden position_8_2 0.14805383352100632
+  hidden position_8_3 -0.1474563585082853
+  hidden rotation_9 1 0 0 2.155870755361509
+  hidden position_10_0 0.1461262083740587
+  hidden rotation_11 -1 0 0 0.5788737916259415
+  hidden rotation_13 1 0 0 2.1564424264821414
+  hidden position_13_0 0.14555453725342704
+  hidden rotation_14 -1.2810132383430968e-08 0.8790525449498054 0.47672489259243706 3.141592999051272
+  hidden position_15_0 0.1536688974442443
+  hidden translation_16 0 0.08175806129636475 -0.028219764323023235
+  hidden rotation_16 -1 0 0 0.571331102555756
+  hidden rotation_18 -1.275853066112322e-08 -0.8791949213281948 -0.4764622653586636 3.1415929990589104
+  hidden position_18_0 0.15307142243152397
   translation 0 0 0.6
   controller "<extern>"
   toolSlot [
-    Robotiq2f140Gripper {
+    GPS {
       rotation 1 0 0 -1.5708
+    }
+    Robotiq2f140Gripper {
+      rotation 1 0 0 -1.57
     }
   ]
 }
@@ -88,25 +106,26 @@ Solid {
   ]
 }
 Solid {
-  translation -0.6 0.2 0.7998037999999997
-  rotation 0.19730322006924544 0.9803425112238034 6.141148761447963e-06 2.460300516469863e-15
+  translation -0.6 0.2 0.8
   children [
     Shape {
       appearance BlanketFabric {
       }
       geometry Cylinder {
         height 0.2
-        radius 0.05
+        radius 0.035
+        subdivision 72
       }
     }
   ]
   name "box"
   boundingObject Cylinder {
     height 0.2
-    radius 0.05
+    radius 0.035
+    subdivision 72
   }
   physics Physics {
-    mass 1
+    mass 0.3
     centerOfMass [
       0 0 0
     ]
@@ -117,8 +136,6 @@ Solid {
     damping Damping {
     }
   }
-  linearVelocity 5.093167174560653e-17 -5.483273396340469e-17 1.4289348672516183e-15
-  angularVelocity 5.48800873747428e-16 5.106813085979416e-16 -2.995200523337806e-20
 }
 Solid {
   translation 0.65 -0.3 0.501

@@ -5,15 +5,40 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/universal_robots/protos/UR5e.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/robotiq/protos/Robotiq2f140Gripper.proto"
+EXTERNPROTO "../protos/Robotiq2f140Gripper.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BlanketFabric.proto"
 
 WorldInfo {
+  basicTimeStep 8
+  dragForceScale 50
+  contactProperties [
+    ContactProperties {
+      material1 "slope"
+      coulombFriction [
+        0.5
+      ]
+    }
+    ContactProperties {
+      coulombFriction [
+        2
+      ]
+      bounce 0.1
+    }
+    ContactProperties {
+      material1 "ROBOTIQ gripper pad"
+      coulombFriction [
+        100
+      ]
+      bounceVelocity 0.001
+      softERP 0.1
+      softCFM 0.005
+    }
+  ]
 }
 Viewpoint {
-  orientation -0.2299865608963428 0.1620567787473074 0.9596060557693032 2.0271068213585286
-  position 1.5311773658662537 -3.097900646870591 2.797335907621955
+  orientation -0.17386262702357655 0.05309917520559956 0.9833373096333453 2.314145781123266
+  position 1.853229711421715 -1.7486820787722515 1.6536845174465638
 }
 TexturedBackground {
   texture "empty_office"
@@ -27,52 +52,32 @@ WoodenBox {
   size 0.3 0.3 0.6
 }
 UR5e {
-  hidden translation_1 0 0 0.163
-  hidden rotation_1 0 0 1 0
-  hidden translation_2 0 0.138 0
-  hidden rotation_2 0 1 0 0.0008122685617614946
-  hidden translation_3 0 -0.131 0.425
-  hidden rotation_3 0 1 0 0.800016231145734
-  hidden translation_4 0 0 0.392
-  hidden rotation_4 0 1 0 0.5707986492547407
-  hidden translation_5 0 0.127 0
-  hidden rotation_5 0 0 -1 1.5700000008273434
-  hidden translation_6 0 0 0.1
-  hidden rotation_6 0 1 0 1.5699999966930966
-  hidden translation_10 0 -0.030601 0.054905
-  hidden rotation_10 0.9999999999999999 0 0 2.026620131223042
-  hidden translation_12 0 0.081755 -0.02822
-  hidden rotation_12 -1 0 0 0.42814428766193496
-  hidden translation_14 0 -0.0127 0.06142
-  hidden rotation_14 1 0 0 2.0242295034124025
-  hidden translation_15 0 0.030601 0.054905
-  hidden rotation_15 -2.3369556439475138e-08 0.8481912110884752 0.5296901636166801 3.1415929968323995
-  hidden translation_17 0 0.08176047414189119 -0.028219236261865423
-  hidden rotation_17 -1 0 0 0.44775479294197973
-  hidden translation_19 0 0.0127 0.06142
-  hidden rotation_19 -2.330716176437e-08 -0.8483837245276232 -0.5293817676843786 3.1415929968493685
+  hidden rotation_6 -2.525775328252162e-05 -0.42100661974780507 0.9070575645958601 2.5217766524919963e-06
   translation 0 0 0.6
   controller "<extern>"
   toolSlot [
-    RangeFinder {
-      translation 0 0.15 0
-      rotation 0.5773529358529169 0.5773489358533613 -0.5773489358533613 -2.094395307179586
-      width 640
-      height 480
-    }
     Camera {
       translation 0 0.15 0
-      rotation -0.5776552290293683 -0.5771982288481764 0.5771972288477798 2.09394
+      rotation -0.5773502691896258 -0.5773502691896258 0.5773502691896258 2.0944
       width 640
       height 480
     }
-    Robotiq2f140Gripper {
+    RangeFinder {
+      translation 0 0.15 0
+      rotation 0.5773502691896258 0.5773502691896258 -0.5773502691896258 -2.0944
+      width 640
+      height 480
+    }
+    GPS {
       rotation 1 0 0 -1.5708
+    }
+    Robotiq2f140Gripper {
+      rotation 1 0 0 -1.57
     }
   ]
 }
 Table {
-  translation 0.65 0 0
+  translation 0.75 0 0
   size 0.6 1 0.5
   feetSize 0.05 0.05
 }
@@ -86,25 +91,26 @@ Solid {
   ]
 }
 Solid {
-  translation -0.6 0.2 0.7998038302775154
-  rotation 0.511423876334841 0.8593285859215583 1.1519570768967291e-05 7.019650354024078e-15
+  translation -0.6 0.2 0.8
   children [
     Shape {
       appearance BlanketFabric {
       }
       geometry Cylinder {
         height 0.2
-        radius 0.05
+        radius 0.035
+        subdivision 72
       }
     }
   ]
   name "box"
   boundingObject Cylinder {
     height 0.2
-    radius 0.05
+    radius 0.035
+    subdivision 72
   }
   physics Physics {
-    mass 1
+    mass 0.3
     centerOfMass [
       0 0 0
     ]

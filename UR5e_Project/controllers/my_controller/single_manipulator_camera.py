@@ -1,15 +1,18 @@
-
 import sys
 webot_path = 'D:\Program Files\Webots\lib\controller\python'
 sys.path.append(webot_path)
 
 import numpy as np
-from controller import Robot, Motor
+from controller import Robot, Motor , Camera, RangeFinder
 
 # create the Robot instance.
 robot = Robot()
-
+camera = Camera('camera')
+range_finder = RangeFinder('range-finder')
+range_finder.enable(10)
+camera.enable(10)
 TIME_STEP = 64
+
 
 class UR5e:
     def __init__(self , name="my_robot"):
@@ -27,7 +30,9 @@ class UR5e:
         self.motors_list = [m1,m2,m3,m4,m5,m6]
         self.gripper_list = [self.griper_finger_r , self.griper_finger_l]
         
-        
+        self.gps = robot.getDevice('gps')
+        self.gps.enable(1)
+
         sampling_period = 1
         self.griper_finger_r.getPositionSensor().enable(sampling_period)
         self.griper_finger_l.getPositionSensor().enable(sampling_period)
@@ -49,6 +54,7 @@ class UR5e:
         
         
     def set_gripper_force(self , force):
+        ''' -10 N > force > 10 N'''
         self.griper_finger_l.setForce(force)
         self.griper_finger_r.setForce(force)
         
@@ -64,11 +70,24 @@ class UR5e:
         p = [m.getPositionSensor().getValue() for m in self.gripper_list]
         return p 
     
+    def get_EE_position(self):
+        return self.gps.value
     
+  
+
 ur5 = UR5e() 
-a = [0,0,0 ,0,0,0] 
+a = [0,0,0 ,0,0,-1.570] 
 ur5.set_arm_pos(a)
-robot.step(10*TIME_STEP)
+ur5.set_gripper_pos(0)
+robot.step(100*TIME_STEP)
+
+b = [0 , -1.57 , .8 ,  1.57, -1.57, -1.0]
+ur5.set_arm_pos(b)
+robot.step(100*TIME_STEP)
+
+
+img = camera.getImageArray()
+depth = range_finder.getRangeImageArray()
 
 ## TODO:
 # open gripper

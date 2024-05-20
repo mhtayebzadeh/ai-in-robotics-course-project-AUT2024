@@ -7,7 +7,7 @@ This repository contains simulation environments and exercises designed for the 
 
 In these exercise series, students will learn:
 
-- [ ] How to work with Webots.
+- [x] How to work with Webots.
 - [ ] Inverse kinematics and position control of the UR5e manipulator.
 - [ ] Classical model-based controllers.
 - [ ] Object detection with a camera.
@@ -31,11 +31,15 @@ Students will be introduced to solving inverse kinematics for the UR5e manipulat
 
 Pick up the cylindrical object from the table at position P1 = [-0.6, 0.2, 0.8] and place it on another table at position P2 = [0.65, -0.3, 0.6]. UR5e robot origin placed at P_base = [0, 0, 0.6].
 
-You can find the kinematics parameters form (here.)[./documents/ur5e-rgb-fact-sheet-landscape-a4.pdf]
+You can find the kinematics parameters form [here.](https://github.com/mhtayebzadeh/ai-in-robotics-course-project-AUT2024/documents/ur5e-rgb-fact-sheet-landscape-a4.pdf)
 for more simplicity, the DH parameters of UR5e are: 
+
 d     =  [0.1625  , 0      , 0        ,0.133   ,0.0997  , 0.101 ]
-a     =  [0       ,-0.425  ,-0.39225  ,0       ,0       ,0      ])
-alpha =  [pi/2    , 0      , 0        ,pi/2    ,pi/2    ,0      ])
+
+a     =  [0       ,-0.425  ,-0.39225  ,0       ,0       ,0      ]
+
+alpha =  [pi/2    , 0      , 0        ,pi/2    ,pi/2    ,0      ]
+
 
 <!-- 
 ### Exercise 2: Object Detection and Grasping

@@ -31,7 +31,7 @@ Students will be introduced to solving inverse kinematics for the UR5e manipulat
 
 Pick up the cylindrical object from the table at position P1 = [-0.6, 0.2, 0.8] and place it on another table at position P2 = [0.65, -0.3, 0.6]. UR5e robot origin placed at P_base = [0, 0, 0.6]. [Video](https://webots.cloud/AccUng0)
 
-You can find the kinematics parameters form [here.]([https://github.com/mhtayebzadeh/ai-in-robotics-course-project-AUT2024/documents/ur5e-rgb-fact-sheet-landscape-a4.pdf](https://github.com/mhtayebzadeh/ai-in-robotics-course-project-AUT2024/blob/main/documents/ur5e-rgb-fact-sheet-landscape-a4.pdf))
+You can find the kinematics parameters form [here.](https://github.com/mhtayebzadeh/ai-in-robotics-course-project-AUT2024/blob/main/documents/ur5e-rgb-fact-sheet-landscape-a4.pdf)
 
 For more simplicity, the DH parameters of UR5e are: 
 

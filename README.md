@@ -29,10 +29,11 @@ To get started with the exercises, follow these steps:
 ### Exercise 1: Inverse Kinematics
 Students will be introduced to solving inverse kinematics for the UR5e manipulator. They will learn to calculate joint angles required to achieve a desired end-effector position. (numerically or analytically)
 
-Pick up the cylindrical object from the table at position P1 = [-0.6, 0.2, 0.8] and place it on another table at position P2 = [0.65, -0.3, 0.6]. UR5e robot origin placed at P_base = [0, 0, 0.6].
+Pick up the cylindrical object from the table at position P1 = [-0.6, 0.2, 0.8] and place it on another table at position P2 = [0.65, -0.3, 0.6]. UR5e robot origin placed at P_base = [0, 0, 0.6]. [Video](https://webots.cloud/AccUng0)
 
 You can find the kinematics parameters form [here.](https://github.com/mhtayebzadeh/ai-in-robotics-course-project-AUT2024/documents/ur5e-rgb-fact-sheet-landscape-a4.pdf)
-for more simplicity, the DH parameters of UR5e are: 
+
+For more simplicity, the DH parameters of UR5e are: 
 
 d     =  [0.1625  , 0      , 0        ,0.133   ,0.0997  , 0.101 ]
 

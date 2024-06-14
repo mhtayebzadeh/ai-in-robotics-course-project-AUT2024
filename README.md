@@ -46,7 +46,9 @@ alpha =  [pi/2    , 0      , 0        ,pi/2    ,-pi/2    ,0      ]
 
 ### Exercise 2: Pick and Place with Known Object Positions
 In this exercise, students will use the UR5e robot equipped with a Robotiq EPick Gripper to perform a pick-and-place task. The positions of the objects are known and provided manually.
+
 This Gripper is a Vacuum Gripper with a length of 13 cm attached to the UR5e end-effector.
+
 In the rest of the exercises, use "worlds/UR5e_vacuumGripper_camera.wbt". python example code is available in "controllers/my_controller/ur5e_vacuumGripper_camera.py".
 
 
@@ -67,17 +69,19 @@ This exercise extends the pick-and-place task by incorporating computer vision t
 5. Validate the performance of the vision system and the robot's ability to complete the task.
 
 
+
 Output example:
+
 ![Pick and Place Example](https://github.com/mhtayebzadeh/ai-in-robotics-course-project-AUT2024/blob/main/documents/images/single_arm_vacuumGripper2.gif)
 
 
 
 
 
+
 ## Python Controller for UR5e Robot
-controllers/my_controller/ur5e_vacuumGripper_camera.py
-### Overview
-The provided Python controller simplifies the access to the UR5e robot and includes methods to interact with the robot's joints, gripper, and sensors.
+
+The provided Python controller "my_controller/ur5e_vacuumGripper_camera.py" simplifies the access to the UR5e robot and includes methods to interact with the robot's joints, gripper, and sensors which are explained below.
 
 ### Methods and Functions
 
